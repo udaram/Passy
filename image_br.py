@@ -105,7 +105,7 @@ cv2.line(blank_image,(400,0),(400,400),(0,0,0),2)
 
 #display images
 cv2.imshow('window',blank_image)
-cv2.imshow('cat',im)
+#cv2.imshow('cat',im)
 
 #to close window with pressing any key
 cv2.waitKey(0)
