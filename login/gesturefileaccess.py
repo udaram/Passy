@@ -16,8 +16,8 @@ def choosegesturefile(username):
         create_new_gesture(username)
         return
     def chfile():
-        fileaddress=filedialog.askopenfilename(initialdir = "/home/udaram/PythonGUI/login/img",title = "Select file",filetypes = (("jpeg files","*.jpeg"),("all files","*.*")))
-        dest="/home/udaram/PythonGUI/login/gestureImg/"+str(username)+".jpeg"
+        fileaddress=filedialog.askopenfilename(initialdir = "img",title = "Select file",filetypes = (("jpeg files","*.jpeg"),("all files","*.*")))
+        dest="gestureImg/"+str(username)+".jpeg"
         copyfile(fileaddress,dest)
         Button(screen2,text="Create Gesture Password",command=creategesture,fg="Blue",font="calibri 10 bold").pack()
        

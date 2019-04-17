@@ -32,7 +32,7 @@ def store_gesture(shape,username):
 	passwd=np.zeros(shape,dtype=np.uint8)
 	for point in new_gesture:
 		cv2.circle(passwd,point,4,255,-1)
-	photo_name="/home/udaram/PythonGUI/login/gesture_PassImg/"+username+"_ges"+".jpg"
+	photo_name="gesture_PassImg/"+username+"_ges"+".jpg"
 	print(photo_name)
 	cv2.imwrite(photo_name,passwd)
 	print('New Gesture Saved')
@@ -43,7 +43,7 @@ def create_new_gesture(username):
 	global new_gesture
 	print('Preparing to create new gesture')
 	new_gesture=[]
-	image_path="/home/udaram/PythonGUI/login/gestureImg/"+str(username)+".jpeg"
+	image_path="gestureImg/"+str(username)+".jpeg"
 	pass_img = cv2.imread(image_path,1)
 	cv2.namedWindow('Create a new password')
 	cv2.setMouseCallback('Create a new password',record_gesture)
@@ -65,9 +65,9 @@ def get_mse(imageA,imageB):
 def login_gesture(username):
 	global new_gesture
 	new_gesture=[]
-	photo_scret="/home/udaram/PythonGUI/login/gesture_PassImg/"+str(username)+"_ges"+".jpg"
+	photo_scret="gesture_PassImg/"+str(username)+"_ges"+".jpg"
 	#print(photo_name)
-	photo_login="/home/udaram/PythonGUI/login/gestureImg/"+str(username)+".jpeg"
+	photo_login="gestureImg/"+str(username)+".jpeg"
 	secret_img=cv2.imread(photo_scret,0)
 	login_img=cv2.imread(photo_login,1)
 	cv2.namedWindow('Draw the gesture to login')

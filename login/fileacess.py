@@ -12,8 +12,8 @@ def choosefile(username):
         choosegesturefile(username)
     def chfile():
         global dest
-        fileaddress=filedialog.askopenfilename(initialdir = "/home/udaram/PythonGUI/login/img",title = "Select file",filetypes = (("jpeg files","*.jpeg"),("all files","*.*")))
-        dest="/home/udaram/PythonGUI/login/imagesegImg/"+str(username)+".jpeg"
+        fileaddress=filedialog.askopenfilename(initialdir = "img",title = "Select file",filetypes = (("jpeg files","*.jpeg"),("all files","*.*")))
+        dest="imagesegImg/"+str(username)+".jpeg"
         copyfile(fileaddress,dest)
         Button(screen2,text="Next",command=chosegesture).pack()
        

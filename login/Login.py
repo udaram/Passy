@@ -61,7 +61,7 @@ def Gesture_verification_gui():
 
 def imagesegmentation():
     #print("hi")
-    image="/home/udaram/PythonGUI/login/imagesegImg/"+username_store+".jpeg"
+    image="imagesegImg/"+username_store+".jpeg"
     print(image)
     ff=image_seg(image)
     if(ff is False):
