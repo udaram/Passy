@@ -14,34 +14,27 @@ def record_gesture(event,x,y,flags,param):
 
 	if event == cv2.EVENT_LBUTTONDOWN:
 		drawing = True
-		#print('left button clicked')
 
 	elif event == cv2.EVENT_MOUSEMOVE:
 		if drawing == True:
 			new_gesture.append((x,y))
-		#print('mouse moved')
 
 		
 	elif event == cv2.EVENT_LBUTTONUP:
 		drawing = False
 		keyboard.press(Key.esc)      #simulating an esc keypress to close the window
 		keyboard.release(Key.esc)
-		#print('mouse up')
 
 def store_gesture(shape,username):
 	passwd=np.zeros(shape,dtype=np.uint8)
 	for point in new_gesture:
 		cv2.circle(passwd,point,4,255,-1)
 	photo_name="gesture_PassImg/"+username+"_ges"+".jpg"
-	print(photo_name)
 	cv2.imwrite(photo_name,passwd)
-	print('New Gesture Saved')
 	return
-	#Message(username)
 
 def create_new_gesture(username):
 	global new_gesture
-	print('Preparing to create new gesture')
 	new_gesture=[]
 	image_path="gestureImg/"+str(username)+".jpeg"
 	pass_img = cv2.imread(image_path,1)
@@ -66,7 +59,6 @@ def login_gesture(username):
 	global new_gesture
 	new_gesture=[]
 	photo_scret="gesture_PassImg/"+str(username)+"_ges"+".jpg"
-	#print(photo_name)
 	photo_login="gestureImg/"+str(username)+".jpeg"
 	secret_img=cv2.imread(photo_scret,0)
 	login_img=cv2.imread(photo_login,1)
@@ -86,10 +78,8 @@ def login_gesture(username):
 	sim = compare_img(passwd,secret_img)
 
 	if sim>0.5:
-		print("Authorized ; Match : "+str(sim))
 		return True
 	else:
-		print("Not Auth")
 		return False
 
 

@@ -8,7 +8,7 @@ f=False
 
                 
 def image_seg(image):
-    print("in imageseg",image)
+    #print("in imageseg",image)
     global im1
     global im2
     global im3
@@ -122,11 +122,11 @@ def keep_coordinates(event,x,y,flags,param):
         ff=image_match()
         if(coun is 4):
             if ff:
-                print("correct")
+                #print("correct")
                 f=ff
                 return
             else:
-                print("wrong")
+                #print("wrong")
                 return
 
 
